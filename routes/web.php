@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TodoController;
 use App\Http\Controllers\FriendController;
+use App\Http\Controllers\DepartmentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,3 +29,13 @@ Route::prefix('/todo')->group(function(){
 });
 
 Route::resource('friends', FriendController::class);
+
+Route::prefix('/department')->group(function(){
+    Route::get('/', [DepartmentController::class, 'index']);
+    Route::get('/create', [DepartmentController::class, 'create']);
+    Route::get('/store', [DepartmentController::class, 'store']);
+    Route::get('/update', [DepartmentController::class, 'update']);
+    Route::get('/edit', [DepartmentController::class, 'edit']);
+    Route::get('/show', [DepartmentController::class, 'show']);
+    Route::get('/destroy', [DepartmentController::class, 'destroy']);
+});
