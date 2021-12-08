@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TodoController;
+use App\Http\Controllers\FriendController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,3 +26,5 @@ Route::prefix('/todo')->group(function(){
 
     Route::get('/create', [TodoController::class, 'create'])->name('todo.create');
 });
+
+Route::resource('friends', FriendController::class);
